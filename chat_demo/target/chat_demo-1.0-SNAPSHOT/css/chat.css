@@ -1,0 +1,89 @@
+/* 使整个页面无间隙，全屏 */
+html, body {
+    height: 100%;
+    margin: 0;          /* 去掉默认外边距 */
+    padding: 0;         /* 去掉默认内边距 */
+    font-family: Arial, sans-serif;
+}
+
+/* 整个页面容器 */
+.chat-container {
+    display: flex;              /* 使用 Flex 布局 */
+    flex-direction: column;     /* 垂直排列子元素（顶部到底部） */
+    height: 100vh;
+}
+
+.chat-container h2 {
+    margin: 20px 0 10px 20px;      /* 设置外边距：上、右、下、左 */
+}
+
+/* 聊天框占满大部分空间，可滚动 */
+#chatBox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 15%;
+    background-color: white;
+}
+
+/* 消息样式 */
+.message {
+    margin: 10px;               /* 与其他消息之间有间距 */
+    padding: 10px 15px;         /* 气泡内部文字的内边距 */
+    border-radius: 20px;        /* 圆角边框，气泡状外观 */
+    max-width: 70%;             /* 消息框最大宽度为70%，避免太宽 */
+    clear: both;                /* 清除浮动，避免布局混乱 */
+}
+
+/* 时间戳 */
+.timestamp {
+    text-align: center;
+    color: gray;
+    font-size: small;
+    margin: 10px 0;
+    clear: both;  /* 清除前面浮动 */
+}
+
+/* 用户消息框 */
+.user {
+    background-color: #cce5ff;
+    color: #004085;
+    float: right;
+    text-align: right;
+}
+
+/* 机器人消息框 */
+.bot {
+    background-color: #d4edda;
+    color: #155724;
+    float: left;
+    text-align: left;
+}
+
+/* 输入区域固定底部 */
+.input-area {
+    display: flex;              /* 使用 Flex 布局让输入框和按钮水平排列 */
+    padding: 15px 15%;              /* 设置整体内边距 */
+    background-color: #ffffff;  /* 背景为纯白色 */
+}
+
+.input-area input[type="text"] {
+    flex: 1;                    /* 输入框自动拉伸占据尽可能多空间 */
+    padding: 20px;              /* 输入框内部文字留出空隙 */
+    font-size: 20px;            /* 设置文字大小 */
+    border-radius: 12px;        /* 圆角输入框 */
+    margin-right: 10px;         /* 与发送按钮之间留出间距 */
+}
+
+.input-area button {
+    padding: 10px 20px;         /* 内边距，使按钮更大更易点击 */
+    font-size: 16px;            /* 文字大小 */
+    background-color: #4CAF50;  /* 背景为绿色 */
+    color: white;               /* 文字为白色 */
+    border: none;               /* 去除边框 */
+    border-radius: 10px;        /* 圆角按钮 */
+    cursor: pointer;            /* 鼠标悬停时变为手型，提示可点击 */
+}
+
+.input-area button:hover {
+    background-color: #45a049;  /* 鼠标悬停按钮变为更深的绿色，增强交互感 */
+}

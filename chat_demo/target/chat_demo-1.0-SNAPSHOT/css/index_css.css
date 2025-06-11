@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;    /* 水平居中 */
+    align-items: center;        /* 垂直居中 */
+    height: 100vh;              /* 占满整个屏幕 */
+}
+
+/* 表格整体样式 */
+.center-form table {
+    font-size: 18px;            /* 整体字体放大 */
+    width: 400px;               /* 设置表格宽度 */
+    border-collapse: separate;
+    border-spacing: 12px;       /* 行间距 */
+}
+
+/* 表单输入框样式 */
+.center-form input[type="text"],
+.center-form input[type="password"] {
+    width: 100%;
+    padding: 12px;              /* 输入框内边距 */
+    font-size: 16px;
+    box-sizing: border-box;     /* 设置盒模型为border-box，确保padding不会撑大整体宽度 */
+}
+
+.hellooo {
+    text-align: center;
+}
+
+/* 注册样式 */
+.you {
+    text-align: right;
+}
+
+/* 提交按钮样式 */
+.center-form input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;           /* 移除按钮的边框线条 */
+    border-radius: 6px;     /* 按钮四周圆角 */
+    cursor: pointer;        /* 鼠标悬停改变光标 */
+}
+
+/* 鼠标悬停时提交按钮样式 */
+.center-form input[type="submit"]:hover {
+    background-color: forestgreen;
+}
+
+/* 标题样式 */
+.center-form h1 {
+    font-size: 32px;
+    margin: 0 0 20px 0;      /* 设置外边距：上、右、下、左，为标题和下方元素留出间距 */
+}
+
