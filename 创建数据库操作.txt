@@ -1,0 +1,18 @@
+CREATE DATABASE ksdata;
+
+USE ksdata;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,  -- id	自增主键	用户唯一标识符
+    username VARCHAR(50) UNIQUE NOT NULL,  --  username	字符串	用户名，必须唯一
+    password_hash VARCHAR(255) NOT NULL  -- password_hash	字符串	密码的哈希值，安全存储
+);
+
+CREATE TABLE chat_logs (
+    id INT PRIMARY KEY AUTO_INCREMENT,  -- id	自增主键	聊天记录唯一标识
+    user_id INT NOT NULL,  -- user_id	INT	对应的用户ID
+    question TEXT NOT NULL, -- question	TEXT	用户提问内容
+    answer TEXT NOT NULL,  --  answer	TEXT	系统生成的回答
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,  --  created_at	DATETIME	问题提出/回答的时间戳
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE  --  外键	外键约束	如果删除用户，记录也删除
+);
